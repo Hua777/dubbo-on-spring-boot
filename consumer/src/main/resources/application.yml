@@ -1,0 +1,14 @@
+server:
+  port: 19001
+
+dubbo:
+  application:
+    name: consumer
+
+  protocol:
+    name: dubbo
+    port: 20880
+
+  registry:
+    address: 127.0.0.1:2181
+    protocol: zookeeper
