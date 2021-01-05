@@ -1,18 +1,25 @@
-dubbo:
-  application:
-    name: provider
+server:
+  port: 9001
 
+dubbo:
   protocol:
     name: dubbo
-    port: 20880
-
+    port: -1
   registry:
-    address: 127.0.0.1:2181
-    protocol: zookeeper
+    address: spring-cloud://127.0.0.1
 
 spring:
+  application:
+    name: dosb-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://127.0.0.1:8848
+      config:
+        server-addr: http://127.0.0.1:8848
+        file-extension: yaml
   datasource:
-    url: jdbc:mysql://127.0.0.1:30001/dosb?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&rewriteBatchedStatements=true
+    url: jdbc:mysql://127.0.0.1:3306/dosb?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&rewriteBatchedStatements=true
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver

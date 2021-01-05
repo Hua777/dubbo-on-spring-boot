@@ -1,14 +1,22 @@
 server:
-  port: 19001
+  port: 9002
 
 dubbo:
-  application:
-    name: consumer
-
   protocol:
     name: dubbo
-    port: 20880
-
+    port: -1
   registry:
-    address: 127.0.0.1:2181
-    protocol: zookeeper
+    address: spring-cloud://127.0.0.1
+  cloud:
+    subscribed-services: dosb-provider
+
+spring:
+  application:
+    name: dosb-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://127.0.0.1:8848
+      config:
+        server-addr: http://127.0.0.1:8848
+        file-extension: yaml
