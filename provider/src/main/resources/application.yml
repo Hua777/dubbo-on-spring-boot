@@ -15,9 +15,8 @@ spring:
     nacos:
       discovery:
         server-addr: http://127.0.0.1:8848
-      config:
-        server-addr: http://127.0.0.1:8848
-        file-extension: yaml
+        namespace: 42309120-04be-4a42-9b66-62b6ba583c58
+        group: DEV_GROUP
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/dosb?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&rewriteBatchedStatements=true
     username: root

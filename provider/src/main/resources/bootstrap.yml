@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        enabled: true
+        server-addr: http://127.0.0.1:8848
+        file-extension: yml
+        namespace: 42309120-04be-4a42-9b66-62b6ba583c58
+        group: DEV_GROUP
+        shared-configs:
+          - dataId: dev.yml
+            group: DEV_GROUP
+            refresh: true

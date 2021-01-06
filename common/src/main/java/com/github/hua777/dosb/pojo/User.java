@@ -18,6 +18,9 @@ public class User implements Serializable {
     @Column(name = "age")
     Integer age;
 
+    @Column(name = "happy")
+    Boolean happy;
+
     public Long getId() {
         return id;
     }
@@ -40,5 +43,13 @@ public class User implements Serializable {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public Boolean getHappy() {
+        return happy;
+    }
+
+    public void setHappy(Boolean happy) {
+        this.happy = happy;
     }
 }
